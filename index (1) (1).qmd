@@ -1,0 +1,156 @@
+---
+title: "Pengaruh Pendapatan Cukai Rokok Terhadap PDB Nasional"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Maylafensya Rahmasari Tuto Hali"
+date: 2024-08-01
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+![](poltekapp.jpg){fig-align="center"}
+
+## Pendahuluan
+
+### Latar belakang
+
+Konsumsi rokok memiliki dampak yang signifikan terhadap masyarakat dari sisi kesehatan maupun ekonomi. Cukai rokok menjadi instrument kebijakan fiscal yang umum digunakan oleh pemerintah untuk mengendalikan konsumsi rokok serta mendapatakan pendapatan tambahan. Meskipun cukai rokok ini ditetapkan dengan salah satu alasannya untuk mengurangu dampak buruk rokok bagi kesehatan masyarakat, tidak dapat dipungkiri pendapatan dari cukai rokok juga dapat memberikan kontribusi terhadap PDB Nasional yang mana dalam memutuskan suatu kebijakan ekonomi secara keseluruhan masih membutuhkan penelitian lebih lanjut. Dalam konteks keberlanjutan, penelitian ini dapat membantu mengevaluasi apakah pendapatan dari cukai rokok dapat diandalkan dan berkelanjutan dalam jangka panjang sebagai sumber pendapatan pemerintah.
+
+### Ruang lingkup
+
+Ruang lingkup penelitian ini membahas dua variabel, yaitu pendapatan cukai rokok & PDB Nasional. Data yang digunakan adalah data yang bersifat time series, yaitu dalam kurun waktu 2013 hingga 2023 (periode Januari-September) dengan satuan mata uang Indonesia, yaitu IDR atau Rupiah. Batasan masalah ini dapat membantu dalam mengidentifikasi masalah yang dibahas dan membatasi jangkauan proses yang di bahas.
+
+### Rumusan masalah
+
+1.  Apakah adanya pengaruh Pendapatan dari Cukai Rokok terhadap PDB Republik Indonesia?
+
+2.  Bagaimana besar kecilnya Pendapatan Cukai Rokok dapat berkontribusi dalam menjadi sumber pendapatan pemerintah?
+
+### Tujuan dan manfaat penelitian
+
+Tujuan penelitian ini untuk mengetahui pengaruh dari Pendapatan Cukai Rokok di Indonesia dari tahun 2013 hingga 2023 (periode Januari-September) terhadap Produk Domestik Bruto Republik Indonesia dari tahun 2013 hingga 2023 (periode Januari-September).
+
+Manfaat penelitian ini adalah untuk membantu peneliti lain & pemerintah dalam mengevaluasi dan memutuskan suatu kebijakan ekonomi terkait cukai rokok yang memberikan kontribusi bagi pendapatan nasional. Dan agar Masyarakat mengerti bahwa terdapat pengaruh yang diberikan pendapatan dari adanya kebijakan cukai rokok terhadap Produk Domestik Bruto (PDB) Nasional.
+
+### Package
+
+Packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(dplyr)
+```
+
+## Studi pustaka
+
+Produk Domestik Bruto (PDB) adalah ukuran total nilai semua barang dan jasa yang dihasilkan oleh suatu negara dalam suatu periode waktu tertentu dan sering digunakan sebagai indikator kesehatan ekonomi suatu negara. PDB diatur dan diukur oleh badan statistik nasional di masing-masing negara. Di Indonesia, Badan Pusat Statistik (BPS) memiliki peran tersebut. Faktor-faktor yang mempengaruhi PDB, antara lain konsumsi rumah tangga, investasi, pengeluaran pemerintah, selisih antara nilai ekspor dan impor dimana jika ekspor lebih besar dari impor, PDB dapat naik, serta ketidakpastian politik dan ekonomi dan faktor alam juga dapat mempengaruhi PDB.
+
+Cukai rokok adalah pajak khusus yang dikenakan pada produksi dan penjualan rokok. Tujuan utama dari cukai rokok adalah untuk melindungi kesehatan masyarakat dengan mengendalikan konsumsi rokok dengan cara menaikkan harganya, dan untuk meningkatkan pendapatan pemerintah yang dapat digunakan untuk membiayai berbagai program pelayanan publik, termasuk di bidang kesehatan dan pendidikan. Regulasi cukai rokok bervariasi di setiap negara dan dapat mencakup tarif cukai, metode perhitungan, dan persyaratan peredaran rokok. Pengaturannya dilakukan oleh otoritas pajak atau lembaga yang bertanggung jawab atas kebijakan fiskal, contohnya seperti Departemen Keuangan & Kantor Pajak.
+
+Tembakau merupakan salah satu komoditas perkebunan dan perdagangan yang penting di Indonesia. Produk utama tembakau yang diperdagangkan salah satunya adalah daun rokok. Peran tembakau dalam perekonomian nasional dapat dilihat dari beberapa indikator salah satunya seperti perannya dalam perekonomian nasional yaitu sebagai sumber penerimaan negara dari cukai. Nilai penerimaan dari cukai yang dari tahun ke tahun terus meningkat, yaitu dari Rp 11,1 triliun pada tahun 2001 menjadi sekitar Rp 47,0 triliun pada tahun 2008, suatu peningkatan rata rata 53 persen per tahun. Salah satu langkah untuk meningkatkan harga rokok adalah dengan meningkatkan pajak/cukai rokok. Penetapan pajak/ cukai umumnya dalam bentuk pajak penjualan ad valorem sebagaimana juga diterapkan di Indonesia dengan tujuan untuk mengendalikan dampak negatif dari konsumsi rokok serta relaksasi keberhasilan.
+
+## Metode penelitian
+
+### Data
+
+Penelitian ini menggunakan data dari dua portal resmi data terbuka, yaitu BPS dan Kementerian Keuangan. Badan Pusat Statistik adalah Lembaga Pemerintah Non Kementerian yang bertanggung jawab langsung kepada Presiden dengan menyediakan kebutuhan data bagi pemerintah dan masyarakat yang didapatkan dari sensus atau survey yang dilakukan sendiri dan juga dari departemen atau lembaga pemerintahan lainnya sebagai data sekunder.
+
+Kementerian Keuangan Republik Indonesia adalah kementerian negara di lingkungan Pemerintah Indonesia yang membidangi urusan keuangan dan kekayaan negara, Kementerian Keuangan berkedudukan di bawah dan bertanggungjawab kepada Presiden. Sistem Layanan Data Kementerian Keuangan merupakan sistem yang mengelola kumpulan data yang berasal dari seluruh Unit Eselon I maupun data eksternal yang dikumpulkan dengan melakukan Data Pooling sesuai ketentuan Pertukaran Data Elektronik di Lingkungan Kementerian Keuangan; dan Data Warehouse yang pelaksanaannya sebagaimana diatur dalam Keputusan Menteri Keuangan Tentang Kebijakan dan Standar Sistem Layanan Data Kementerian Keuangan.
+
+Berikut adalah data yang digunakan sebagai objek penelitian yaitu data pendapatan cukai rokok dan PDB Nasional dengan periode 2013-2023 :
+
+| NO  | Tahun | Pendapatan Cukai Rokok | PDB Nasional  |
+|-----|-------|------------------------|---------------|
+| 1   | 2013  | 103.56                 | 9,546,134.00  |
+| 2   | 2014  | 112.56                 | 10,569,705.30 |
+| 3   | 2015  | 139.52                 | 11,526,332.80 |
+| 4   | 2016  | 138                    | 12,401,728.50 |
+| 5   | 2017  | 147.7                  | 13,589,825.70 |
+| 6   | 2018  | 152.9                  | 14,838,756.00 |
+| 7   | 2019  | 164.87                 | 15,832,657.20 |
+| 8   | 2020  | 170.24                 | 15,443,353.20 |
+| 9   | 2021  | 188.81                 | 16,976,690.80 |
+| 10  | 2022  | 198.02                 | 19,588,445.60 |
+| 11  | 2023  | 163.24                 | 15.594.847.20 |
+
+: Sumber : Badan Pusat Statistik & Kementerian Keuangan
+
+Penelitian ini menggunakan data sekunder dengan bentuk data time series 2013-2023 dengan data yang telah diolah dari Badan Pusat Statistik dan Kementerian Keuangan Republik Indonesia.
+
+```{r}
+library(readxl)
+dat<-read_excel("G:/UAS Metopel/data uas.xlsx")
+head(dat)
+```
+
+```{r}
+library(readxl)
+dat<-read_excel("G:/UAS Metopel/data uas.xlsx") 
+library("ggplot2")
+library("dplyr")
+library("readxl")
+reg<-lm(data=dat,y~x)
+ggplot(data = dat, aes(x =`x`, y = `y`)) +
+  geom_point(color="purple",size=2) + 
+  scale_color_viridis_c() +
+  labs(title = "Gambar 1: Hubungan Antara Pendapatan Cukai Rokok dan PDB Nasional",
+          x = "Pendapatan Cukai Rokok (Triliun)",
+          y = "PDB (Triliun)",
+          caption = "Sumber: Badan Pusat Statistik & Kementerian Keuangan") +
+  theme_classic()
+```
+
+### Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini bertujuan untuk mencari hubungan antara Pendapatan Cukai Rokok (X) dengan naik turunnya PDB Nasional (Y). Spesifikasi yang dilakukan adalah dengan menggunakan persamaan :
+
+$$ y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah PDB Nasional dan $x_t$ adalah Pendapatan Cukai Rokok.
+
+## Pembahasan
+
+### Pembahasan masalah
+
+Karena penelitian ini menggunakan metode regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen yaitu Pendapatan Cukai Rokok dan 1 variabel dependen yaitu PDB Nasional.
+
+```{r}
+library(readxl)
+dat<-read_excel("G:/UAS Metopel/data uas.xlsx")
+head(dat)
+```
+
+### Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+reg1<-lm(data=dat,y~x)
+summary(reg1)
+
+```
+
+## Kesimpulan
+
+Dari hasil regresi dapat dilihat bahwa hubungan antara X dan Y dapat dijelaskan dengan baik dari hasil model regresi linear 'y = -115,708,054 + 10,041,465 \* x' yang berarti setiap peningkatan satu unit dalam pendapatan dari cukai rokok, maka PDB Nasional diharapkan akan meningkat sebesar 10.041.465 unit. Dari hasil regresi tersebut memberikan gambaran hubungan positif antara pendapatan dari cukai rokok dan PDB Nasional yang dilihat dari koefisien positif (10,041,465) yang berarti peningkatan pendapatan dari cukai rokok diikuti dengan peningkatan di PDB Nasional.
+
+## Referensi
+
+Kamalina, A. R. (2023). Sri Mulyani Bidik Pendapatan Cukai Rokok Rp230,4 Triliun pada 2024. Bisnis.Com. https://ekonomi.bisnis.com/read/20231129/259/1719129/sri-mulyani-bidik-pendapatan-cukai-rokok-rp2304-triliun-pada-2024#:\~:text=Adapun%2C%20Bendahara%20Negara%20tersebut%20telah,)%20senilai%20Rp163%2C2%20triliun.
+
+Kementerian Keuangan Republik Indonesia. (2015). In WIKIPEDIA ENSIKLOPEDIA BEBAS. Media Wiki. https://id.wikipedia.org/wiki/Kementerian_Keuangan_Republik_Indonesia
+
+KEPUTUSAN MENTERI KEUANGAN REPUBLIK INDONESIA TENTANG KEBIJAKAN DAN STANDAR SISTEM LAYANAN DATA KEMENTERIAN KEUANGAN. (2016). https://setjen.kemenkeu.go.id/api/Medias/5688b805-3e29-462b-8d71-7c72867473a8
+
+Pramesti, R. I. (2021). Dampak Kenaikan Cukai Hasil Tembakau Terhadap Output Sektoral dan Pendapatan Domestik Bruto Indonesia: Aplikasi Analisis Input- Output. Sebelas Maret University. https://digilib.uns.ac.id/dokumen/detail/88299/
+
+Produk Domestik Bruto (PDB). (n.d.). Satu Data Perdagangan. Retrieved January 5, 2024, from https://satudata.kemendag.go.id/data-informasi/perdagangan-dalam-negeri/produk-domestik-bruto
+
+Profil BPS. (2024). https://ppid.bps.go.id/app/konten/0000/Profil-BPS.html
+
+Putri, A. A. (2023). Pendapatan Cukai Rokok dalam 10 Tahun Terakhir. Good Stats. https://data.goodstats.id/statistic/adelandilaa/pendapatan-cukai-rokok-dalam-10-tahun-terakhir-GwzaV
+
+Rachmat, M. (2010). PENGEMBANGAN EKONOMI TEMBAKAU NASIONAL: KEBIJAKAN NEGARA MAJU DAN PEMBELAJARAN BAGI INDONESIA. Analisis Kebijakan Pertanian, 8, 68--76.
+
+Wijaya, I. R. A., Masyhuri, Irham, & Hartono, S. (2014). ANALISIS INPUT OUTPUT PENGOLAHAN TEMBAKAU DI PROVINSI JAWA TIMUR. Agro Ekonomi, 24, 8.
